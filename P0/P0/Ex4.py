@@ -1,9 +1,9 @@
-from Seq0 import
+from Seq0 import *
 
 bases = ["A", "C", "T", "G"]
 list_of_genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P" ]
 txt = ".txt"
-FOLDER = "../Session-04/"
+FOLDER = "../SESSION 4/"
 
 for e in list_of_genes:
     print("Gene", e, ":")

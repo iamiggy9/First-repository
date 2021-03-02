@@ -1,5 +1,5 @@
-from Seq0 import
-FOLDER = "../Session-04/"
+from Seq0 import *
+FOLDER = "../SESSION 4/"
 GENENAME = "U5"
 first_bases = seq_read_fasta(FOLDER+GENENAME+'.txt')[:20]
 print("Gene ", GENENAME, ":")

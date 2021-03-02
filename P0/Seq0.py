@@ -1,31 +1,33 @@
 from pathlib import Path
 
 
-
 def seq_ping():
     print('OK')
 
 
 def take_out_first_line(seq):
     return seq[seq.find('\n') + 1:].replace('\n', '')
+
+
 def seq_read_fasta(filename):
-     sequence = Path(filename).read_text()
-     contain =sequence.split('\n')
-     contain=contain[1:]
-     final_string= ''.join(contain)
-     return final_string
+    sequence = Path(filename).read_text()
+    contain = sequence.split('\n')
+    contain = contain[1:]
+    final_string = ''.join(contain)
+    return final_string
 
 
 def seq_len(seq):
     return len(seq)
 
 
-def seq_count_base(seq,base):
+def seq_count_base(seq, base):
     counter = 0
     for e in seq:
         if e in base:
             counter += 1
         return counter
+
 
 def seq_count(seq):
     bases = ["A", "C", "T", "G"]
@@ -35,11 +37,12 @@ def seq_count(seq):
     dictionary = dict(zip(bases, count_bases))
     return dictionary
 
+
 def seq_reverse(seq):
     reverse_sequence = ''
     for e in seq[::-1]:
         reverse_sequence += e
-    return (reverse_sequence)
+    return reverse_sequence
 
 
 def seq_complement(seq):
@@ -51,6 +54,4 @@ def seq_complement(seq):
         for i, t in dict_comp.items():
             if e == i:
                 comp_seq += t
-    return (comp_seq)
-
-
+    return comp_seq
