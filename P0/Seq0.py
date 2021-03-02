@@ -6,15 +6,12 @@ def seq_ping():
 
 
 def take_out_first_line(seq):
-    return seq[seq.find('\n') + 1:].replace('\n', '')
+    return seq[seq.find('\n') + 1:].replace('\n', "")
 
 
 def seq_read_fasta(filename):
-    sequence = Path(filename).read_text()
-    contain = sequence.split('\n')
-    contain = contain[1:]
-    final_string = ''.join(contain)
-    return final_string
+    sequence = take_out_first_line(Path(filename).read_text())
+    return sequence
 
 
 def seq_len(seq):
@@ -22,11 +19,7 @@ def seq_len(seq):
 
 
 def seq_count_base(seq, base):
-    counter = 0
-    for e in seq:
-        if e in base:
-            counter += 1
-        return counter
+    return seq.count(base)
 
 
 def seq_count(seq):
