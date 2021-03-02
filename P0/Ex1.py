@@ -1,2 +1,3 @@
-import Seq0
-print('Testing the seq_ping() funcion')
+ from Seq0 import
+print('Testing the seq_ping() function')
+seq_ping()
