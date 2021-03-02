@@ -1,8 +1,11 @@
-from Seq0 import *
+from P0.Seq0 import *
 
-list_of_genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P" ]
+bases = ["A", "C", "T", "G"]
+list_of_genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P"]
 txt = ".txt"
 FOLDER = "../SESSION 4/"
 
 for e in list_of_genes:
-    print("Gen", e, "--->  Length: ", seq_len(seq_read_fasta(FOLDER+e+txt)))
+    print("Gene", e, ":")
+    for i in bases:
+        print(i, ":",seq_count_base(seq_read_fasta(FOLDER+e+txt), i))

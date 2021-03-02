@@ -10,4 +10,4 @@ for e in list_of_genes:
         while t > val:
             val = t
             base = i
-    print("Gene ", e, " : Most frequent base: ", base)
+    print("Gene ", e, " : Most frequent base: ", base,'Number of repetitions: ', val)

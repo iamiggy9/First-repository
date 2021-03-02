@@ -1,4 +1,4 @@
-from Seq0 import *
+from P0.Seq0 import *
 FOLDER = "../SESSION 4/"
 GENENAME = "U5"
 first_bases = seq_read_fasta(FOLDER+GENENAME+'.txt')[:20]

@@ -1,4 +1,4 @@
-from Seq0 import *
+from P0.Seq0 import *
 list_of_genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P" ]
 txt = ".txt"
 FOLDER = "../SESSION 4/"
