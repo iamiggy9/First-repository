@@ -3,6 +3,7 @@ bases = ["A", "C", "T", "G"]
 list_of_genes = ["U5", "ADA", "FRAT1", "FXN", "RNU6_269P" ]
 txt = ".txt"
 FOLDER = "../SESSION 4/"
+print('----- | Exercise 8 | ------')
 for e in list_of_genes:
     val = 0
     base = ''
