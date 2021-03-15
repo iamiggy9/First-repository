@@ -3,7 +3,7 @@ from Seq1 import Seq
 from Seq1 import Seq
 print('-----| Practice 1, Exercise 5 |------')
 
-s1 = Seq('')
+s1 = Seq('NULL')
 
 s2 = Seq("ACTGA")
 

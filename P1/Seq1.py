@@ -2,30 +2,22 @@ import pathlib
 
 
 class Seq:
-    """A class for representing sequence objects"""
+    NULL='NULL'
+    INVALID='ERROR'
 
-    def __init__(self, strbases="NULL"):  # by default the Seq object is NULL
-        if strbases == "NULL":
+    def __init__(self, strbases=NULL):  # by default the Seq object is NULL
+        if strbases == Seq.NULL:
             print("NULL Seq Created")
-            self.strbases = "NULL"
-            self.length = 0  # If the sequence is null the length is = 0
+            self.strbases = strbases
+        elif Seq.is_valid_sequence_2(strbases):
+            self.strbases=strbases
+            print('New sequence created')
         else:
-            valid = True
-            i = 0
-            while i < len(strbases) and valid:
-                # Look for incorrect bases
-                if (strbases[i] != "A") and (strbases[i] != "C") and (strbases[i] != "G") and (strbases[i] != "T"):
-                    valid = False
-                    self.strbases = "ERROR"
-                    self.length = 0  # If the sequence is not valid the length is = 0
-                    print("INVALID Seq!")
-                else:
-                    i += 1
+            self.strbases=Seq.INVALID
+            print('Invalid sequence')
 
-            if valid and strbases != "NULL":  # The sequence is valid !!
-                print("New sequence created!")
-                self.strbases = strbases
-                self.length = len(self.strbases)
+
+
     @staticmethod
     def is_valid_sequence_2(strbases):
         for c in strbases:
@@ -73,7 +65,10 @@ class Seq:
         return self.strbases
 
     def len(self):
-        return self.length
+        if self.strbases == Seq.NULL or self.strbases==Seq.INVALID:
+            return 0
+        else:
+            return len(self.strbases)
 
     def count_base(self, base):
         return self.strbases.count(base)
