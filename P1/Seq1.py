@@ -5,7 +5,7 @@ class Seq:
     NULL='NULL'
     INVALID='ERROR'
 
-    def __init__(self, strbases=NULL):  # by default the Seq object is NULL
+    def __init__(self, strbases=NULL):
         if strbases == Seq.NULL:
             print("NULL Seq Created")
             self.strbases = strbases
@@ -24,44 +24,8 @@ class Seq:
             if c!='A' and c !='C' and c!='G' and c!= 'T':
                return False
         return True
-    @staticmethod
-    def print_seqs(seq_list):
-        for i in range(0, len(seq_list)):
-            if [i]=='NULL':
-                text = 'Sequence: ' + str(i) + " , (Lenght : 0 "  +  str(seq_list[i])
-                print(text)
-            if [i]=='ERROR':
-                text = 'Sequence: ' + str(i) + " , (Lenght : 0 " + str(seq_list[i])
-                print(text)
-            else:
-                text='Sequence: ' + str(i) + " , (Lenght : " + str(seq_list[i].len()) + ")" + str(seq_list[i])
-                print(text)
-
-    @staticmethod
-    def generate_seqs(pattern, number):
-        empty_list=[]
-        for i in range(0,number):
-            empty_list.append(Seq(pattern * (i+1)))
-        return empty_list
-
-
-
-
-
-
-
-
-    def is_valid_sequence(self):
-        for c in self.strbases:
-            if c!='A' and c !='C' and c!='G' and c!= 'T':
-               return False
-        return True
-
 
     def __str__(self):
-        """Method called when the object is being printed"""
-
-        # -- We just return the string with the sequence
         return self.strbases
 
     def len(self):
@@ -84,12 +48,12 @@ class Seq:
     @staticmethod
     def reverse(self):
         rev_seq = ''
-        if self.strbases == 'NULL':
+        if self.strbases == Seq.NULL:
             return self.strbases
         else:
             for e in self.strbases[::-1]:
                 if e not in ["A", "C", "T", "G"]:
-                    rev_seq = 'ERROR'
+                    rev_seq = Seq.INVALID
                     return rev_seq
 
                 else:
@@ -98,23 +62,23 @@ class Seq:
     @staticmethod
     def complement(self):
         comp_seq = ""
-        if self.strbases == 'NULL':
+        if self.strbases == Seq.NULL:
             return self.strbases
         else:
             for e in self.strbases:
                 if e not in ["A", "C", "T", "G"]:
-                    comp_seq = 'ERROR'
+                    comp_seq = Seq.INVALID
                     return comp_seq
                 else:
-                    if e in "A":
+                    if e == "A":
                         comp_seq += "T"
-                    if e in "T":
+                    if e == "T":
                         comp_seq += "A"
-                    if e in "C":
+                    if e == "C":
                         comp_seq += "G"
-                    if e in "G":
+                    if e == "G":
                         comp_seq += "C"
-            return (comp_seq)
+            return comp_seq
 
     def read_fasta(self, filename):
             file_lines = pathlib.Path(filename).read_text().split("\n")
@@ -122,14 +86,5 @@ class Seq:
             self.strbases = ''.join(body)
             return (self)
 
-    pass
 
-    def read_file_lines(filename):
-        file_lines = pathlib.Path(filename).read_text().split("\n")
-        body = (file_lines[1:])
-        sp_list = []
-        for e in body:
-            e = e.split(',')
-            fin_str = e[0]
-            sp_list.append(fin_str)
-        return (sp_list)
+
