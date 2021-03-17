@@ -1,7 +1,7 @@
 import socket
 
 # Configure the Server's IP and PORT
-PORT = 4532
+PORT =  6792
 IP = "172.18.15.194"
 MAX_OPEN_REQUESTS = 5
 

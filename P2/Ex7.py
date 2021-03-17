@@ -22,3 +22,4 @@ while i < len(s.strbases) and count < 5:
       print(c_2.talk('Fragment ' + str(count) + ':' + fragment))
     else:
         print(c.talk('Fragment ' + str(count) + ':' + fragment))
+
