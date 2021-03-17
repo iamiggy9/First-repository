@@ -84,7 +84,7 @@ class Seq:
             file_lines = pathlib.Path(filename).read_text().split("\n")
             body = (file_lines[1:])
             self.strbases = ''.join(body)
-            return (self)
+            return self
 
 
 
